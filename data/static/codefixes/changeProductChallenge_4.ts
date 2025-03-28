@@ -14,6 +14,7 @@
     .delete(security.denyAll())
   /* Products: Only GET is allowed in order to view products */
   app.post('/api/Products', security.isAuthorized())
+  app.post('/api/Products:id', security.isAuthorized())
   app.put('/api/Products/:id', security.isAuthorized())
   app.delete('/api/Products/:id', security.denyAll())
   /* Challenges: GET list of challenges allowed. Everything else forbidden entirely */
